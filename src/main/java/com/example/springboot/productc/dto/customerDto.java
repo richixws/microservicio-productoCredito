@@ -11,24 +11,23 @@ import lombok.Data;
 @Data
 public class customerDto {
 
-	
+	@Id
 	private String id;
 
-	private String firstName;
-
-	private String lastName;
+	private String fullname;
 
 	private String numDoc;
-
-	private String address;
-
-	private String bank;
-
-	private String type;
-
 	
-	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
-	private Date dateJoin;
+	private String address;
+	
+	private String bank;
+	 
+    private String type;
+    
+    @JsonFormat(pattern = "yyyy-MM-dd")
+    private Date joinAt;
+
+
 
 	
 	

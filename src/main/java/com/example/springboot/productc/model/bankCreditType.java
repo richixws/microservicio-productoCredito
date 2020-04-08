@@ -9,10 +9,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 
-@Getter
-@Setter
-@AllArgsConstructor
-@Document(collection = "tipocuentabancaria")
+@Data
 public class bankCreditType {
 
 	@Id
@@ -20,11 +17,5 @@ public class bankCreditType {
 	
 	private String descripcion;
 	
-
-
-	public bankCreditType(String descripcion) {
-		super();
-		this.descripcion = descripcion;
-	}
 	
 }

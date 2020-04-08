@@ -1,36 +1,48 @@
 package com.example.springboot.productc.model;
 
+import java.util.Date;
+
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
-
-@Getter
-@Setter
-@ToString
-@AllArgsConstructor
-@Document(collection = "cuentacredito")
+@Data
+@Document(collection = "creditProduct")
 public class bankCredit {
 
 	@Id
-	private String idProduct;
+	private String id;
 	
-	private String descripcion;
+	private String bank;
 	
-	private double interest;
+	private String typeOwner;
 	
-	private bankCreditType creditType;
+	private String productName;
+	
+	private String numberAccount;
 
-	public bankCredit(String descripcion, double interest, bankCreditType creditType) {
-		super();
-		this.descripcion = descripcion;
-		this.interest = interest;
-		this.creditType = creditType;
-	}
+	private String nameOwner;
+	//
+	private String dniOwner;
+	
+	private Double creditAmount;
+	
+	private Double balance;
+	
+	private Double consume;
+	@JsonFormat(pattern = "yyyy-MM-dd")
+		private Date joinDate;
+	
+	@JsonFormat(pattern = "yyyy-MM-dd")
+	private Date expirationDate;
+	
 
 
 	
